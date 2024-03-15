@@ -31,10 +31,14 @@ botonHam.src =
 document.body.appendChild(botonHam)
 botonHam.addEventListener('click', () => {
   menuham.classList.toggle('visible')
-  botonHam.classList.remove('botonHam')
+  if (menuham.classList.contains('visible')) {
+    botonHam.style.display = 'none'
+  }
 })
 
 quit.addEventListener('click', () => {
   menuham.classList.remove('visible')
-  botonHam.classList.toggle('botonHam')
+  if (!menuham.classList.remove('visible')) {
+    botonHam.style.display = 'flex'
+  }
 })
