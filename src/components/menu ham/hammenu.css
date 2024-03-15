@@ -1,0 +1,56 @@
+.menuham {
+  display: flex;
+  height: 100vh;
+  width: 25vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 0.5em;
+  background: #ba5370;
+  background: -webkit-linear-gradient(to right, #f4e2d8, #ba5370);
+  background: linear-gradient(to right, #f4e2d8, #ba5370);
+  color: #fff;
+  overflow-x: hidden;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 90%;
+  align-items: center;
+  text-align: center;
+}
+.navHam {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 0;
+  height: 100%;
+}
+.ulHam {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 4px;
+}
+
+.botonHam {
+  display: none;
+  height: 40px;
+  position: absolute;
+
+  top: 40px;
+  right: 20px;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    display: none;
+  }
+  .botonHam {
+    display: flex;
+  }
+  header {
+    justify-content: space-evenly;
+  }
+}
