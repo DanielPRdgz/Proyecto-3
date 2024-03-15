@@ -1,5 +1,22 @@
+a {
+  color: white;
+}
+a:hover {
+  text-shadow: 2px 2px 4px#ba5370; /* Ajusta los valores según tu preferencia */
+}
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 90%;
+    transform: translateX(0);
+  }
+}
 .menuham {
-  display: flex;
+  display: none;
   height: 100vh;
   width: 25vw;
   position: absolute;
@@ -16,6 +33,38 @@
   opacity: 90%;
   align-items: center;
   text-align: center;
+  z-index: 9999;
+}
+.menuham.visible {
+  display: flex;
+  height: 100vh;
+  width: 25vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 0.5em;
+  background: #ba5370;
+  background: -webkit-linear-gradient(to right, #f4e2d8, #ba5370);
+  background: linear-gradient(to right, #f4e2d8, #ba5370);
+  color: #ffffff;
+  overflow-x: hidden;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 90%;
+  align-items: center;
+  text-align: center;
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+@keyframes myAnimTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
 }
 .navHam {
   display: flex;
@@ -36,15 +85,24 @@
   display: none;
   height: 40px;
   position: absolute;
-
-  top: 40px;
+  filter: invert(100);
+  top: 20px;
   right: 20px;
   margin-top: 1em;
+  cursor: pointer;
+  z-index: 1;
+}
+.quitButton {
+  height: 30px;
+  position: absolute;
+  right: 3px;
+  top: 0;
+  filter: invert(100);
   cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
-  nav {
+  navHam {
     display: none;
   }
   .botonHam {
@@ -52,5 +110,27 @@
   }
   header {
     justify-content: space-evenly;
+  }
+}
+@media only screen and (max-width: 490px) {
+  .menuham.visible {
+    display: flex;
+    height: 70vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 0.5em;
+    background: #ba5370;
+    background: -webkit-linear-gradient(to right, #f4e2d8, #ba5370);
+    background: linear-gradient(to right, #f4e2d8, #ba5370);
+    color: #ffffff;
+    overflow-x: hidden;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 90%;
+    align-items: center;
+    text-align: center;
+    animation: myAnimTop 0.5s ease 0s 1 normal forwards;
   }
 }
