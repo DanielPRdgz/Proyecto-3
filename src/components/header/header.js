@@ -1,15 +1,19 @@
+import { button } from '../buttons/buttons'
 import './header.css'
 
 export const createHeader = () => {
   const headerSearch = document.querySelector('header')
   const title = document.createElement('h1')
   title.textContent = 'iPixel'
+  const divButtons = document.createElement('div')
+  divButtons.classList.add('divButtons')
+  divButtons.innerHTML = `${button('Create')}${button('Explore')}`
   const formSearch = document.createElement('form')
   formSearch.action = ''
   formSearch.classList.add('form-search')
   const inputSearch = document.createElement('input')
   inputSearch.type = 'text'
-  inputSearch.placeholder = '🔎What are you looking for?'
+  inputSearch.placeholder = 'Searching..'
   inputSearch.classList.add('search-bar')
   const buttonSearch = document.createElement('button')
   buttonSearch.textContent = 'PIXEL IT!'
@@ -40,6 +44,7 @@ export const createHeader = () => {
   formSearch.appendChild(inputSearch)
   formSearch.appendChild(buttonSearch)
   headerSearch.appendChild(title)
+  headerSearch.appendChild(divButtons)
   headerSearch.appendChild(formSearch)
   headerSearch.appendChild(nav)
 

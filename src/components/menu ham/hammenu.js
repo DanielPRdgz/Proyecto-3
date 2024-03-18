@@ -6,7 +6,7 @@ quit.src =
 quit.classList.add('quitButton')
 export const createMenuHam = () => {
   const menuham = document.querySelector('.menuham')
-  const hams = ['User', 'Notifications', 'Settings', 'Log out', 'FAQ']
+  const hams = ['User', 'Notifications', 'Messages', 'Settings', 'Log Out']
   const navHam = document.createElement('nav')
   navHam.classList.add('navHam')
   const ulHam = document.createElement('ul')

@@ -50,7 +50,7 @@ body {
 #app {
   margin: 1rem auto;
   width: 100%;
-  max-width: 80%;
+  max-width: 97%;
   column-count: 6;
   break-inside: avoid;
   page-break-inside: avoid;
