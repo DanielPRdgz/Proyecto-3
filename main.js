@@ -16,15 +16,18 @@ async function searchImages() {
   //!Si tiene keyword es decir, el usuario ha introducido algo para buscar, entonces utilizaremos esta url si no, una por defecto.
   const response = await fetch(url)
   const data = await response.json()
-  // Fetcheo la url declarada, que me la devuelve como const data al json.
+  // Fetcheo la url declarada, que me la devuelve como data al json.
   console.log(data)
   if (page === 1) {
     galleryContainer.innerHTML = ''
   }
+
   //que no se acumulen los resultados
 
   const results = data.results || data //Asignamos a result los datos extraidos de la API, si es data.results son los filtrados/buscados si no por defecto.
-
+  if (results.length === 0) {
+    galleryContainer.innerHTML = `<p class="messageError">No matches found.</p>`
+  }
   results.forEach((result) => {
     const img = document.createElement('img')
     img.src = result.urls.small

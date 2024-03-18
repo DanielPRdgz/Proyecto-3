@@ -12,7 +12,13 @@ ol {
 a {
   text-decoration: none;
 }
-
+p {
+  font-size: 40px;
+}
+.messageError {
+  position: absolute;
+  text-align: center;
+}
 body {
   --sb-track-color: #f4f4f4;
   --sb-thumb-color: #ba53709b;
